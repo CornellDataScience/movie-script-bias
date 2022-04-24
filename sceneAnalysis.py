@@ -16,10 +16,14 @@ content = reader.readlines()
 
 #print("length: ", len(content)-5)
 for i in range(0,len(content)-2):
+    print(content[i])
     if "EXT." in content[i] or "INT." in content[i]:
+        print("inside if")
         f.write(content[i])
+        i=i+1
     print(i)
     while("EXT." not in content[i] and "INT." not in content[i]):
+        print("in while")
         f.write(content[i+1])
         i=i+1
     break

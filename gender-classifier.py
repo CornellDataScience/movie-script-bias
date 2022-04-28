@@ -1,10 +1,11 @@
 import random
 from nltk.corpus import names
 import nltk
+# nltk.download('names')
 
 
 def gender_features(word):
-    return {'last_letter': word[-1]}
+    return {'last_letter': word[-2:]}
 
 
 # preparing a list of examples and corresponding class labels.
@@ -25,7 +26,8 @@ train_set, test_set = featuresets[500:], featuresets[:500]
 # train a new "naive Bayes" classifier.
 classifier = nltk.NaiveBayesClassifier.train(train_set)
 
-print(classifier.classify(gender_features('mahavir')))
+print(classifier.classify(gender_features('Crowd')))
 
 # output should be 'male'
 print(nltk.classify.accuracy(classifier, train_set))
+print(nltk.classify.accuracy(classifier, test_set))

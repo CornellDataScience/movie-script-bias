@@ -25,18 +25,34 @@ class Gender_classifier():
         # train a new "naive Bayes" classifier.
         self.classifier = nltk.NaiveBayesClassifier.train(train_set)
 
-    def nlp_classify(self, name):
+    def nlp_classifier(self, name):
         return self.classifier.classify(self.gender_features(name))
 
     def api_classifier(self, name):
         url = "https://api.genderize.io?name=" + name
         response = urlopen(url)
         decoded = response.read().decode('utf-8')
-        gender = json.loads(decoded)["gender"]
+        data = json.loads(decoded)
+        gender = data["gender"]
+        prob = data["probability"]
         if gender == None:
+            # if there's no gender could be assigned, return None
             print("None")
+            return ("Undefined", prob)
         else:
             print(gender)
+            return (gender, prob)
+
+    def classify(self, name):
+        gender, prob = self.api_classifier(name)
+        if gender == "Undefined":
+            return "Undefined"
+        if prob <= 0.7:
+            check = self.nlp_classifier(name)
+            if check != gender:
+                print("please check manually")
+                return "Disagreed"
+        return gender
 
 # output should be 'male'
 # print(nltk.classify.accuracy(classifier, train_set))

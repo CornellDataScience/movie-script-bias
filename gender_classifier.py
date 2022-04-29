@@ -5,7 +5,7 @@ import nltk
 
 class Gender_classifier():
     def __init__(self) -> None:
-        self.gender_features = lambda word:  {'last_letter': word[-2:]}
+        self.gender_features = lambda word:  {'last_letter': word[-3:]}
         labeled_names = ([(name, 'male') for name in names.words('male.txt')] +
                          [(name, 'female') for name in names.words('female.txt')])
 

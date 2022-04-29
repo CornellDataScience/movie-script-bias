@@ -1,3 +1,5 @@
+from urllib.request import urlopen
+import json
 import random
 from nltk.corpus import names
 import nltk
@@ -23,8 +25,18 @@ class Gender_classifier():
         # train a new "naive Bayes" classifier.
         self.classifier = nltk.NaiveBayesClassifier.train(train_set)
 
-    def classify(self, name):
+    def nlp_classify(self, name):
         return self.classifier.classify(self.gender_features(name))
+
+    def api_classifier(self, name):
+        url = "https://api.genderize.io?name=" + name
+        response = urlopen(url)
+        decoded = response.read().decode('utf-8')
+        gender = json.loads(decoded)["gender"]
+        if gender == None:
+            print("None")
+        else:
+            print(gender)
 
 # output should be 'male'
 # print(nltk.classify.accuracy(classifier, train_set))

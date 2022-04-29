@@ -8,26 +8,28 @@ def gender_features(word):
     return {'last_letter': word[-2:]}
 
 
-# preparing a list of examples and corresponding class labels.
-labeled_names = ([(name, 'male') for name in names.words('male.txt')] +
-                 [(name, 'female') for name in names.words('female.txt')])
+def classify(name):
 
-random.shuffle(labeled_names)
+    # preparing a list of examples and corresponding class labels.
+    labeled_names = ([(name, 'male') for name in names.words('male.txt')] +
+                     [(name, 'female') for name in names.words('female.txt')])
 
-# we use the feature extractor to process the names data.
-featuresets = [(gender_features(n), gender)
-               for (n, gender) in labeled_names]
+    random.shuffle(labeled_names)
 
-# Divide the resulting list of feature
-# sets into a training set and a test set.
-train_set, test_set = featuresets[500:], featuresets[:500]
+    # we use the feature extractor to process the names data.
+    featuresets = [(gender_features(n), gender)
+                   for (n, gender) in labeled_names]
 
-# The training set is used to
-# train a new "naive Bayes" classifier.
-classifier = nltk.NaiveBayesClassifier.train(train_set)
+    # Divide the resulting list of feature
+    # sets into a training set and a test set.
+    train_set, test_set = featuresets[500:], featuresets[:500]
 
-print(classifier.classify(gender_features('Crowd')))
+    # The training set is used to
+    # train a new "naive Bayes" classifier.
+    classifier = nltk.NaiveBayesClassifier.train(train_set)
+
+    return classifier.classify(gender_features(name))
 
 # output should be 'male'
-print(nltk.classify.accuracy(classifier, train_set))
-print(nltk.classify.accuracy(classifier, test_set))
+# print(nltk.classify.accuracy(classifier, train_set))
+# print(nltk.classify.accuracy(classifier, test_set))

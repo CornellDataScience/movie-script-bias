@@ -26,7 +26,7 @@ class Gender_classifier():
         self.classifier = nltk.NaiveBayesClassifier.train(train_set)
 
     def nlp_classifier(self, name):
-        return self.classifier.classify(self.gender_features(name))
+        return (self.classifier.classify(self.gender_features(name)), None)
 
     def api_classifier(self, name):
         url = "https://api.genderize.io?name=" + name
@@ -48,7 +48,7 @@ class Gender_classifier():
         if gender == "Undefined":
             return "Undefined"
         if prob <= 0.7:
-            check = self.nlp_classifier(name)
+            check, _ = self.nlp_classifier(name)
             if check != gender:
                 print("please check manually")
                 return "Disagreed"

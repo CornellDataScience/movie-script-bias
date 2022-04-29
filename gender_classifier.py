@@ -3,7 +3,7 @@ from nltk.corpus import names
 import nltk
 
 
-class gender_classifier():
+class Gender_classifier():
     def __init__(self) -> None:
         self.gender_features = lambda word:  {'last_letter': word[-2:]}
         labeled_names = ([(name, 'male') for name in names.words('male.txt')] +

@@ -29,7 +29,14 @@ class Gender_classifier():
         return self.classifier.classify(self.gender_features(name))
 
     def api_classifier(self, name):
+<<<<<<< HEAD
         url = "https://api.genderize.io?name=" + name
+=======
+        try:
+            url = "https://api.genderize.io?name=" + name
+        except:
+            return("Undefined", 0)
+>>>>>>> 78d729471d70fe8fb5f0ad00d647cf05fb24ef1d
         response = urlopen(url)
         decoded = response.read().decode('utf-8')
         data = json.loads(decoded)

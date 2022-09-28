@@ -1,9 +1,9 @@
-file = "scripts/practice.txt"
+file = "movie-scripts/practice.txt"
 
 characters = ['Elsa','Anna', 'Olaf', 'Kristoff', 'Sven', 'Hans', 'Oaken', 'Duke']
-f = open("scripts/scene1.txt","w")
+f = open("movie-scripts/scene1.txt","w")
 
-reader = open('scripts/practice.txt')
+reader = open('movie-scripts/practice.txt')
 content = reader.readlines()
 
 for i in range(0,len(content)-2):

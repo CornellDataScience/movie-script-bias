@@ -9,7 +9,7 @@ import pandas as pd
 #run TextBlob on each line, perform binning on each line and sum scores for each 'bin'
 #figure out how to identify variety
 
-with open('scripts/legally-blonde-script.json') as f:
+with open('movie-scripts/legally-blonde-script.json') as f:
    data = json.load(f)
 
 script = []

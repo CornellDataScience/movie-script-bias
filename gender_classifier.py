@@ -8,8 +8,8 @@ import nltk
 class Gender_classifier():
     def __init__(self) -> None:
         self.gender_features = lambda word:  {'last_letter': word[-3:]}
-        labeled_names = ([(name, 'male') for name in names.words('male.txt')] +
-                         [(name, 'female') for name in names.words('female.txt')])
+        labeled_names = ([(name, 'male') for name in names.words('scripts/male.txt')] +
+                         [(name, 'female') for name in names.words('scripts/female.txt')])
 
         random.shuffle(labeled_names)
 
@@ -55,5 +55,3 @@ class Gender_classifier():
         return gender
 
 # output should be 'male'
-# print(nltk.classify.accuracy(classifier, train_set))
-# print(nltk.classify.accuracy(classifier, test_set))

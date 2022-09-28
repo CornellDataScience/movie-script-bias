@@ -1,31 +1,31 @@
 # Bias in ML
 
-***
+
 ## Overview
-***
+
 ### Objectives:
 Our objectives are:
 1. []
 2. []
 3. []
 
-***
+
 ## Table of Contents
-***
+
 1. File 1
 2. Folder 1
    1. Script 1
    2. Script 2
 
-***
+
 ## How To Run
-***
+
 1. Instruction 1
 2. Instruction 2
 
-***
+
 ## Project Members
-***
+
 
 ### Current Members:
 
@@ -52,9 +52,9 @@ Our objectives are:
 #### First Last
 #### First Last
 
-***
+
 ## Helpful Links
-***
+
 ### Movie Script Source:
 - [link]
 ### Link to Other Source:

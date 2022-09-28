@@ -1,26 +1,37 @@
 # Bias in ML
 
+***
 ## Overview
+***
 ### Objectives:
-Our objectives are [].
+Our objectives are:
+1. []
+2. []
+3. []
 
-### Key Topics:
-Our key topics are [].
-
+***
 ## Table of Contents
-1. Content 1
-2. Content 2
-   1. Subcontent 1
-   2. Subcontent 2
+***
+1. File 1
+2. Folder 1
+   1. Script 1
+   2. Script 2
 
-## Installation / Access
+***
+## How To Run
+***
 1. Instruction 1
 2. Instruction 2
 
+***
 ## Project Members
+***
+
 ### Current Members:
+
 #### Imani Finkley
 ![Headshot of Imani Finkley](/headshots/sample_headshot.png)
+
 #### Rahma Tasnim
 ![Headshot of Rahma Tasnim](/headshots/sample_headshot.png)
 
@@ -36,13 +47,14 @@ Our key topics are [].
 #### Srisha Gaur
 ![Headshot of Srisha Gaur](/headshots/sample_headshot.png)
 
-
 ### Previous Members:
 #### First Last
 #### First Last
 #### First Last
 
+***
 ## Helpful Links
+***
 ### Movie Script Source:
 - [link]
 ### Link to Other Source:
